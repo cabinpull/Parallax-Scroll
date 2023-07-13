@@ -1,0 +1,143 @@
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+body{
+  background-color: rgb(20, 20, 20);
+  margin: 0;
+}
+
+#menu {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  margin-left: clamp(1rem, 1vw, 48rem);
+  color:white;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-family: 'VT323', monospace;
+
+  display: block;
+  text-decoration: none;
+  padding: clamp(0.25rem,0.5vw, 1rem) 0rem;
+  transition: opacity 400ms ease, color 400ms ease;
+}
+.menu-item:hover{
+  color:rgb(255, 86, 114);
+}
+
+#menu-items {
+  margin-left: clamp(4rem, 20vw, 48rem);
+  position: relative;
+  z-index: 2;
+}
+#menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+#menu-items:hover > .menu-item:hover {
+  opacity: 1;
+}
+
+#menu-background-pattern {
+  height: 100vh;
+  width: 100vw;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 0%, transparent 0%);
+  background-position: 0% -25%;
+  background-size: 12vmin 12vmin;
+  transition: opacity 0.3s ease-in-out, background-size 500ms ease, background-position 500ms ease, background-image 800ms ease;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 1;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+  background-size: 11vmin 11vmin;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.150) 9%, transparent 9%);
+  opacity: 1;
+  background-position: 0% -25%; /* Add the current position to ensure smooth transition */
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+  background-position: 0% -25%;
+}
+#menu[data-active-index="1"] > #menu-background-pattern {
+  background-position: 0% -50%;
+}
+#menu[data-active-index="2"] > #menu-background-pattern {
+  background-position: 0% -75%;
+}
+#menu[data-active-index="3"] > #menu-background-pattern {
+  background-position: 0% -100%;
+}
+
+#menu-background-image-2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  background-position: center 40%;
+  background-size: 110vmax;
+  opacity: 0.15;
+  transition: opacity 800ms ease, background-size 800ms ease, background-position 800ms ease;
+}
+
+#menu-items:hover ~ #menu-background-image-2 {
+  background-size: 100vmax;
+  opacity: 0.10;
+  background-position: center 45%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image-2 {
+  background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image-2 {
+  background-position: center 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image-2 {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image-2 {
+  background-position: center 60%;
+}
+#menu-background-image-2 {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1688410053066-efae78ae17ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"); /* Replace with the direct link to your desired image */
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  background-position: center 40%;
+  background-size: 100vmax;
+  opacity: 0.5;
+  transition: opacity 800ms ease, background-size 800ms ease, background-position 800ms ease;
+}
+
+#menu-items:hover ~ #menu-background-image-2 {
+  background-size: 150vmax;
+  opacity: 0.15;
+  background-position: center 45%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image-2 {
+  background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image-2 {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image-2 {
+  background-position: center 65%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image-2 {
+  background-position: center 75%;
+}
